@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+
+#awesome {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+    border:solid black;
+    border-radius:5%;
+    width:50%;
+}
+
+#awesome > displayDiv {
+
+    background-color: aqua;
+}
+
+#form {
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
