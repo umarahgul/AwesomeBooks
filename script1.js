@@ -51,23 +51,23 @@ function addBooks() {
 document.getElementById('addBook').addEventListener('click', addBooks);
 document.addEventListener('DOMContentLoaded', displayBooks);
 
-// if(!localStorage.getItem("title")){
-//     setStorage();
-// }
-// else
-// {
-//     getStorage();
-// }
+if(!localStorage.getItem("title")){
+    setStorage();
+}
+else
+{
+    getStorage();
+}
 
-// function getStorage() {
-//     const currentTitle = localStorage.getItem('title');
-//     const currentAuthor = localStorage.getItem('author');
+function getStorage() {
+    const currentTitle = localStorage.getItem('title');
+    const currentAuthor = localStorage.getItem('author');
 
-//     titleVal.value = currentTitle;
-//     document.getElementById('author').value = currentAuthor;
-//   }
+    titleVal.value = currentTitle;
+    document.getElementById('author').value = currentAuthor;
+  }
 
-//   function setStorage() {
-//     localStorage.setItem('title', document.getElementById('title').value);
-//     localStorage.setItem('author', document.getElementById('author').value);
-//   }
+  function setStorage() {
+    localStorage.setItem('title', document.getElementById('title').value);
+    localStorage.setItem('author', document.getElementById('author').value);
+  }
