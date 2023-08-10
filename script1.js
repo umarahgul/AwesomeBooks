@@ -44,6 +44,7 @@ static displayBooks()
 
       para1.textContent = Book.collection[x].title + ' by ' ;
       displayDiv.setAttribute('id', `id${x}`);
+      displayDiv.classList.add('displayDiv');
       
       console.log(displayDiv.id);
       displayDiv.appendChild(para1);
@@ -59,10 +60,10 @@ static displayBooks()
         displayDiv.remove();
         Book.collection.splice(x, 1);
       });
-      const cssDiv=document.getElementById(`id${x}`);
-      cssDiv.style.cssText='display: flex; flex-direction: row; align-items:center; gap:5%;  width:100%';
-      const rmvBtn= document.getElementById('rmvBtn');
-      rmvBtn.style.cssText='#rmvBtn {margin-left: 70%; margin-right:0; }';
+      //const cssDiv=document.getElementById(`id${x}`);
+      //cssDiv.style.cssText='display: flex; flex-direction: row; align-items:center; gap:5%;  width:100%';
+     // const rmvBtn= document.getElementById('rmvBtn');
+      //rmvBtn.style.cssText='#rmvBtn {margin-left: 70%; margin-right:0; }';
 
   }
 
