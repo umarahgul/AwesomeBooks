@@ -1,58 +1,54 @@
 const titleVal = document.getElementById('title');
 const authorVal = document.getElementById('author');
 const main = document.getElementById('awesome');
-let sheet=document.createElement('style');
-class Book{
+let sheet = document.createElement('style');
+class Book {
 
-  static count=0;
+  static count = 0;
 
-constructor(title, author)
-{
-  this.title=title;
-  this.author=author;
-}
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 
-static collection=[
-  { title: 'title1', author: 'auhtor1' },
-  { title: 'title2', author: 'auhtor2' },
-  { title: 'title3', author: 'auhtor3' },
-  { title: 'title4', author: 'auhtor4' },
-];
+  static collection = [
+    { title: 'title1', author: ' auhtor1' },
+    { title: 'title2', author: ' auhtor2' },
+    { title: 'title3', author: ' auhtor3' },
+    { title: 'title4', author: ' auhtor4' },
+  ];
 
-static addBooks(title, author)
-{
-  const newBook =new Book(title, author);
-  Book.collection.push(newBook);
-  Book.displayBooks();
- // return newBook;
-  // add books to the collection
+  static addBooks(title, author) {
+    const newBook = new Book(title, author);
+    Book.collection.push(newBook);
+    Book.displayBooks();
+    // return newBook;
+    // add books to the collection
 
-}
+  }
 
-static displayBooks()
-{
+  static displayBooks() {
 
-  main.innerHTML="";
+    main.innerHTML = "";
 
-  for(let x=0; x< Book.collection.length; x += 1)
-  {
+    for (let x = 0; x < Book.collection.length; x += 1) {
       const displayDiv = document.createElement('div');
       const para1 = document.createElement('p');
       const para2 = document.createElement('p');
       const removeButton = document.createElement('button');
       removeButton.textContent = 'Remove';
 
-      para1.textContent = Book.collection[x].title + ' by ' ;
+      para1.textContent = Book.collection[x].title + ' by';
       displayDiv.setAttribute('id', `id${x}`);
       displayDiv.classList.add('displayDiv');
-      
+
       console.log(displayDiv.id);
       displayDiv.appendChild(para1);
       // console.log(para1.textContent);
-      para2.textContent = Book.collection[x].author;
+      para2.textContent = "  " + Book.collection[x].author;
       displayDiv.appendChild(para2);
       removeButton.textContent = 'Remove';
-      removeButton.setAttribute('id','rmvBtn');
+      removeButton.setAttribute('id', 'rmvBtn');
       displayDiv.appendChild(removeButton);
 
       main.appendChild(displayDiv);
@@ -60,27 +56,21 @@ static displayBooks()
         displayDiv.remove();
         Book.collection.splice(x, 1);
       });
-      //const cssDiv=document.getElementById(`id${x}`);
-      //cssDiv.style.cssText='display: flex; flex-direction: row; align-items:center; gap:5%;  width:100%';
-     // const rmvBtn= document.getElementById('rmvBtn');
-      //rmvBtn.style.cssText='#rmvBtn {margin-left: 70%; margin-right:0; }';
+
+    }
+
 
   }
 
-// display books along with remove button 
-
 }
 
-}
-
-document.getElementById('addBook').addEventListener('click', function(){Book.addBooks(titleVal.value, authorVal.value)});
+document.getElementById('addBook').addEventListener('click', function () { Book.addBooks(titleVal.value, authorVal.value) });
 document.addEventListener('DOMContentLoaded', Book.displayBooks);
 
-if(!localStorage.getItem("title")){
+if (!localStorage.getItem("title")) {
   setStorage();
 }
-else
-{
+else {
   getStorage();
 }
 
@@ -96,6 +86,39 @@ function setStorage() {
   localStorage.setItem('title', document.getElementById('title').value);
   localStorage.setItem('author', document.getElementById('author').value);
 }
+
+
+function setClassList() {
+  document.getElementById('awesome').classList.add('showSection');
+  document.getElementById('form').classList.add('hideSection');
+  document.getElementById('contact').classList.add('hideSection');
+
+}
+document.addEventListener('DOMContentLoaded', function () {
+  function setClassAdd() {
+    document.getElementById('awesome').classList.add('hideSection');
+    document.getElementById('form').classList.add('showSection');
+    document.getElementById('contact').classList.add('hideSection');
+
+  }
+
+
+  function setClassContact() {
+    document.getElementById('awesome').classList.add('hideSection');
+    document.getElementById('form').classList.add('hideSection');
+    document.getElementById('contact').classList.add('showSection');
+
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('List').addEventListener('click', setClassList);
+document.getElementById('AddNew').addEventListener('click', setClassAdd);
+document.getElementById('Cntct').addEventListener('click', setClassContact);
+document.addEventListener('DOMContentLoaded', Book.displayBooks);});
+
+
+
+
 
 
 
