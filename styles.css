@@ -38,7 +38,7 @@ h1 {
     text-align: center;
 }
 
-#awesome {
+.awesome {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -62,7 +62,7 @@ h1 {
     padding:2%;
 }
 
-#form {
+.form {
     display:flex;
     flex-direction: column;
     justify-content:space-evenly;
@@ -76,7 +76,7 @@ h1 {
 
 }
 
-#contact {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,6 +89,7 @@ h1 {
 
     display:flex;
 }
+
 .hideSection {
     display:none;
 }

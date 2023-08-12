@@ -63,6 +63,29 @@ class Book {
   }
 
 }
+document.getElementById('List').addEventListener('click', function(){
+        
+  document.getElementById("awesome").classList.replace('hideSection','showSection');
+  document.getElementById('form').classList.replace('showSection', 'hideSection');
+  document.getElementById('contact').classList.replace('showSection','hideSection');
+
+});
+
+document.getElementById('AddNew').addEventListener('click',function(){
+document.getElementById('awesome').classList.replace('showSection','hideSection');
+document.getElementById('form').classList.replace('hideSection','showSection');
+document.getElementById('contact').classList.replace('showSection','hideSection');
+});
+
+document.getElementById('Cntct').addEventListener('click',function(){
+document.getElementById('awesome').classList.replace('showSection','hideSection');
+document.getElementById('form').classList.replace('showSection','hideSection');
+document.getElementById('contact').classList.replace('hideSection','showSection');
+console.log('i m changing classes');
+} );
+
+
+
 
 document.getElementById('addBook').addEventListener('click', function () { Book.addBooks(titleVal.value, authorVal.value) });
 document.addEventListener('DOMContentLoaded', Book.displayBooks);
@@ -87,34 +110,6 @@ function setStorage() {
   localStorage.setItem('author', document.getElementById('author').value);
 }
 
-
-function setClassList() {
-  document.getElementById('awesome').classList.add('showSection');
-  document.getElementById('form').classList.add('hideSection');
-  document.getElementById('contact').classList.add('hideSection');
-
-}
-document.addEventListener('DOMContentLoaded', function () {
-  function setClassAdd() {
-    document.getElementById('awesome').classList.add('hideSection');
-    document.getElementById('form').classList.add('showSection');
-    document.getElementById('contact').classList.add('hideSection');
-
-  }
-
-
-  function setClassContact() {
-    document.getElementById('awesome').classList.add('hideSection');
-    document.getElementById('form').classList.add('hideSection');
-    document.getElementById('contact').classList.add('showSection');
-
-  }
-});
-document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('List').addEventListener('click', setClassList);
-document.getElementById('AddNew').addEventListener('click', setClassAdd);
-document.getElementById('Cntct').addEventListener('click', setClassContact);
-document.addEventListener('DOMContentLoaded', Book.displayBooks);});
 
 
 
