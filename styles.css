@@ -97,6 +97,8 @@ h1 {
 #footer {
 border:solid black;
 padding: 2%;
-text-align: left;
+text-align: left;position:fixed;
+bottom:0;
+width:100%;
 
 }
