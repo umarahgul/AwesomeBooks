@@ -34,39 +34,45 @@ padding:0;
     font-size: 1.5rem;
     cursor: pointer;
 }
-h1 {
-    text-align: center;
-}
+
+
 
 .awesome {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     align-items:center;
-    border:solid black;
-    border-radius:5%;
     width:50%;
     margin-left: 25%;
-    padding:3%;
+    border:solid black;
     
+    /* background-color:     */
+    
+}
+
+.displayDiv:nth-child(odd)
+{
+    background-color: #DDDDDD;
+    /* color: white; */
 }
 
 .displayDiv {
 
-    background-color: aqua;
-    border: solid red;
     display:flex;
     flex-direction: row;
     align-items: center;
     width:100%;
-    padding:2%;
+    padding:0;
+   
 }
 
 .form {
     display:flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content:space-between;
     align-items: center;
+    gap:5%;
+    height:60vh;
 }
 
 #rmvBtn {
@@ -101,4 +107,23 @@ text-align: left;position:fixed;
 bottom:0;
 width:100%;
 
+}
+
+ #heading {
+    margin-left: 30%;
+
+}
+#author, #title {
+    font-size:100%;
+    border:solid black 2px;
+ 
+}
+#addBook {
+    margin-left:10%;
+    font-size:1.5rem;
+    padding-left:2%;
+    margin-right:2%;
+    margin-top:1%;
+    margin-bottom:1%;
+    
 }

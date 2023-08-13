@@ -30,7 +30,8 @@ class Book {
   static displayBooks() {
 
     main.innerHTML = "";
-
+   
+  
     for (let x = 0; x < Book.collection.length; x += 1) {
       const displayDiv = document.createElement('div');
       const para1 = document.createElement('p');
@@ -68,6 +69,7 @@ document.getElementById('List').addEventListener('click', function(){
   document.getElementById("awesome").classList.replace('hideSection','showSection');
   document.getElementById('form').classList.replace('showSection', 'hideSection');
   document.getElementById('contact').classList.replace('showSection','hideSection');
+  document.getElementById('heading').classList.replace('hideSection','showSection');
 
 });
 
@@ -75,12 +77,14 @@ document.getElementById('AddNew').addEventListener('click',function(){
 document.getElementById('awesome').classList.replace('showSection','hideSection');
 document.getElementById('form').classList.replace('hideSection','showSection');
 document.getElementById('contact').classList.replace('showSection','hideSection');
+document.getElementById('heading').classList.replace('showSection','hideSection');
 });
 
 document.getElementById('Cntct').addEventListener('click',function(){
 document.getElementById('awesome').classList.replace('showSection','hideSection');
 document.getElementById('form').classList.replace('showSection','hideSection');
 document.getElementById('contact').classList.replace('hideSection','showSection');
+document.getElementById('heading').classList.replace('showSection', 'hideSection');
 console.log('i m changing classes');
 } );
 
